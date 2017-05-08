@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+        <script>
+            function onDeviceReady() {
+                if (navigator.connection.type == Connection.NONE) {
+                    navigator.notification.alert('An internet connection is required to continue');
+                } else {
+                    window.location="http://sakbah.ogail.net/";
+                }
+            }
+            document.addEventListener("deviceready", onDeviceReady, false);
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>
