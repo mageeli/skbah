@@ -7,7 +7,7 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
-    <content src="www/index.html" />
+    <content src="index.html" />
     <access origin="http://sakbah.ogail.net*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
