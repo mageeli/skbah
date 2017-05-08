@@ -8,6 +8,17 @@
         PhoneGap Team
     </author>
     <content src="index.html" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="14" />
+    <plugin name="cordova-plugin-device" spec="1.1.5" />
+    <plugin name="cordova-plugin-device-motion" spec="1.2.4" />
+    <plugin name="cordova-plugin-device-orientation" spec="1.0.6" />
+    <plugin name="cordova-plugin-dialogs" spec="1.3.2" />
+    <plugin name="cordova-plugin-inappbrowser" spec="1.7.0" />
+    <plugin name="cordova-plugin-network-information" spec="1.3.2" />
+    <plugin name="cordova-plugin-splashscreen" spec="4.0.2" />
+    <plugin name="cordova-plugin-vibration" spec="2.1.4" />
+    <plugin name="cordova-plugin-whitelist" spec="1.3.2" />
     <access origin="http://sakbah.ogail.net*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
