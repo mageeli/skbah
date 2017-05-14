@@ -9,7 +9,7 @@
                 if (navigator.connection.type == Connection.NONE) {
                     navigator.notification.alert('An internet connection is required to continue');
                 } else {
-                    window.open('http://sakbah.ogail.net','_system', 'location=no');
+                    window.open('http://sakbah.ogail.net','_self', 'location=no');
                 }
             }
             document.addEventListener("deviceready", onDeviceReady, false);
