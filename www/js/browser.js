@@ -41,7 +41,7 @@ function inAppBrowserAPI() {
                 {file: 'common.js'}
             );
             browserOptions.executeScript(
-                {code: '$("body").addClass("mobile");'}
+                {code: 'document.getElementById("body").classList.add("mobile");'}
             );
             browserOptions.show();
         });
