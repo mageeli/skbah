@@ -9,7 +9,7 @@ function inAppBrowserAPI() {
         'clearcache=yes',
         'clearsessioncache=yes',
         'transitionstyle=fliphrizontal',
-        'toolbar=yes',
+        'toolbar=no',
         'closebuttoncaption=Exit',
         'toolbarposition=top',
         'disallowoverscroll=yes',
@@ -20,7 +20,7 @@ function inAppBrowserAPI() {
         'suppressesIncrementRendering=yes',
         'presentationstle=formsheet',
         'zoom=no',
-        'hardwareback=no',
+        'hardwareback=yes',
         'fullscreen=yes'
     ]
 
@@ -36,7 +36,7 @@ function inAppBrowserAPI() {
                 {file: 'stylesheets.css'}
             );
             browserOptions.insertCSS(
-                { code: 'body #footer {display: none;}'}
+                { code: 'body #footer {display: none;} #slideshow0 {display: none;}'}
             );
         })
 
