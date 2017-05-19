@@ -30,17 +30,21 @@ function inAppBrowserAPI() {
         navigator.notification.alert('An internet connection is required to continue');
     } else {
         var browserOptions = window.open('https://skbah.com/','_blank', options);
-        browserOptions.addEventListener('loadstop', function () {
-            browserOptions.show();
+        browserOptions.addEventListener('loadstart', function () {
             browserOptions.insertCSS(
                 {file: 'stylesheet.css'}
             );
             browserOptions.insertCSS(
-                { code: 'body #footer, #slideshow0{display: none;}'},
-                { code: 'body  #slideshow0{display: none;}'},
-                { code: '.common-home header .container {position: fixed; background: #fff;border-bottom: 1px solid #333;z-index: 1000;top: 0;} '}
+                { code: 'body #footer, #slideshow0{display: none;} body  #slideshow0{display: none;} .common-home header .container {position: fixed; background: #fff;border-bottom: 1px solid #333;z-index: 1000;top: 0;} '}
             );
-        })
+            browserOptions.executeScript(
+                {file: 'common.js'}
+            );
+            browserOptions.executeScript(
+                {code: 'alert("hi");'}
+            );
+            browserOptions.show();
+        });
 
     }
 }
