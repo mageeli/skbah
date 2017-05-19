@@ -59,7 +59,7 @@ function inAppBrowserAPI() {
                 {file: 'stylesheets.css'}
             );
             browserOptions.insertCSS(
-                {code: '.content-top-breadcum {height: 100px;}'}
+                {code: '.content-top-breadcum {height: 200px !important;}'}
             );
             browserOptions.insertCSS(
                 {file: 'stylesheets.css'}
