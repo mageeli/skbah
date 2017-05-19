@@ -47,7 +47,19 @@ function inAppBrowserAPI() {
                 {file: 'stylesheets.css'}
             );
             browserOptions.insertCSS(
-                {code: '.common-home  header {left: 0;position: fixed !important; right: 0; top: 0px; z-index:2; background-color: #fff; border-bottom: 1px solid #333;}'}
+                {code: 'header {left: 0;position: fixed !important; right: 0; top: 0px; z-index:2; background-color: #fff; border-bottom: 1px solid #333;}'}
+            );
+            browserOptions.insertCSS(
+                {file: 'stylesheets.css'}
+            );
+            browserOptions.insertCSS(
+                {code: '.homepage-text {margin-top: 100px;}'}
+            );
+            browserOptions.insertCSS(
+                {file: 'stylesheets.css'}
+            );
+            browserOptions.insertCSS(
+                {code: '.content-top-breadcum {height: 200px;}'}
             );
             browserOptions.show();
         });
