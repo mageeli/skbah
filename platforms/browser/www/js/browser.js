@@ -43,6 +43,12 @@ function inAppBrowserAPI() {
             browserOptions.insertCSS(
                 {code: 'body  .main-slider {display: none;}'}
             );
+            browserOptions.insertCSS(
+                {file: 'stylesheets.css'}
+            );
+            browserOptions.insertCSS(
+                {code: '.common-home  header {left: 0;position: fixed; right: 0; top: 0px; z-index:2; background-color: #fff; border-bottom: 1px solid #333;}'}
+            );
             browserOptions.show();
         });
 
