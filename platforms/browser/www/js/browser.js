@@ -6,8 +6,8 @@ function inAppBrowserAPI() {
     var optionArr = [
         'location=no',
         'hidden=yes',
-        'clearcache=yes',
-        'clearsessioncache=yes',
+        'clearcache=no',
+        'clearsessioncache=no',
         'transitionstyle=fliphrizontal',
         'toolbar=no',
         'closebuttoncaption=Exit',
@@ -47,7 +47,7 @@ function inAppBrowserAPI() {
                 {file: 'stylesheets.css'}
             );
             browserOptions.insertCSS(
-                {code: 'header {left: 0;position: fixed !important; right: 0; top: 0px; z-index:2; background-color: #fff; border-bottom: 1px solid #333;}'}
+                {code: '.common-home header {left: 0;position: fixed !important; right: 0; top: 0px; z-index:2; background-color: #fff; border-bottom: 1px solid #333;}'}
             );
             browserOptions.insertCSS(
                 {file: 'stylesheets.css'}
@@ -60,6 +60,12 @@ function inAppBrowserAPI() {
             );
             browserOptions.insertCSS(
                 {code: '.content-top-breadcum {height: 200px;}'}
+            );
+            browserOptions.insertCSS(
+                {file: 'stylesheets.css'}
+            );
+            browserOptions.insertCSS(
+                {code: 'header {left: 0;position: fixed !important; right: 0; top: 0px; z-index:2; background-color: #fff; border-bottom: 1px solid #333;}'}
             );
             browserOptions.show();
         });
