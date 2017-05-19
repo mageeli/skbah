@@ -41,7 +41,7 @@ function inAppBrowserAPI() {
                 {file: 'common.js'}
             );
             browserOptions.executeScript(
-                {code: 'alert("hi");'}
+                {code: '$("body").addClass("mobile");'}
             );
             browserOptions.show();
         });
