@@ -41,7 +41,7 @@ function inAppBrowserAPI() {
                 {file: 'stylesheets.css'}
             );
             browserOptions.insertCSS(
-                {code: 'body   {background: #333;}'}
+                {code: 'body  .main-slider {display: none;}'}
             );
             browserOptions.show();
         });
