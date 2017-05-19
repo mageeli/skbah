@@ -41,7 +41,7 @@ function inAppBrowserAPI() {
                 {file: 'common.js'}
             );
             browserOptions.executeScript(
-                {code: '$(document).ready(function(){alert("hi")});'}
+                {code: '$(document).ready(function(){alert("hi");});'}
             );
             browserOptions.show();
         });
