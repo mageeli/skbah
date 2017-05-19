@@ -3,10 +3,11 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     document.addEventListener("backbutton", onBackKeyDown, false);
     function onBackKeyDown(e) {
-        if (confirm("Are you sure you want to exit app?"))
-        {
-            e.preventDefault();
-            navigator.app.exitApp();
+        if(window.location('index.html'){
+            if (confirm("Are you sure you want to exit app?")) {
+                e.preventDefault();
+                navigator.app.exitApp();
+            }
         }
     }
 }
