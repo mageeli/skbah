@@ -2,7 +2,7 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     document.addEventListener("backbutton", function(e){
-        if($.mobile.activePage.is('index.html')){
+        if($.mobile.activePage.is('#homepage')){
             e.preventDefault();
             navigator.app.exitApp();
         }
