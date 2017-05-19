@@ -33,7 +33,7 @@ function inAppBrowserAPI() {
         browserOptions.addEventListener('loadstop', function () {
             browserOptions.show();
             browserOptions.insertCSS(
-                {file: 'stylesheets.css'}
+                {file: 'stylesheet.css'}
             );
             browserOptions.insertCSS(
                 { code: 'body #footer, #slideshow0{display: none;}'},
