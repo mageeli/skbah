@@ -36,7 +36,9 @@ function inAppBrowserAPI() {
                 {file: 'stylesheets.css'}
             );
             browserOptions.insertCSS(
-                { code: 'body #footer, #slideshow0{display: none;} .common-home header .container {position: fixed; background: #fff;border-bottom: 1px solid #333;z-index: 1000;top: 0;}'}
+                { code: 'body #footer, #slideshow0{display: none;}'},
+                { code: 'body  #slideshow0{display: none;}'},
+                { code: '.common-home header .container {position: fixed; background: #fff;border-bottom: 1px solid #333;z-index: 1000;top: 0;} '}
             );
         })
 
