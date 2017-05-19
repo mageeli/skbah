@@ -35,7 +35,10 @@ function inAppBrowserAPI() {
                 {file: 'stylesheet.css'}
             );
             browserOptions.insertCSS(
-                { code: 'body #footer {display: none;}'}
+                {code: 'body #footer {display: none;}'}
+            );
+            browserOptions.insertCSS(
+                {code: 'body  #slideshow0{display: none;}'}
             );
             browserOptions.show();
         });
