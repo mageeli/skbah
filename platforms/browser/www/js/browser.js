@@ -35,13 +35,7 @@ function inAppBrowserAPI() {
                 {file: 'stylesheet.css'}
             );
             browserOptions.insertCSS(
-                { code: 'body #footer, #slideshow0{display: none;} body  #slideshow0{display: none;} .common-home header .container {position: fixed; background: #fff;border-bottom: 1px solid #333;z-index: 1000;top: 0;} '}
-            );
-            browserOptions.executeScript(
-                {file: 'common.js'}
-            );
-            browserOptions.executeScript(
-                {code: '$(document).ready(function(){alert("hi");});'}
+                { code: 'body #footer {display: none;}'}
             );
             browserOptions.show();
         });
