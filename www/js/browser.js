@@ -32,7 +32,7 @@ function inAppBrowserAPI() {
         var browserOptions = window.open('https://skbah.com/','_blank', options);
         browserOptions.addEventListener('loadstart', function () {
             browserOptions.insertCSS(
-                {file: 'stylesheet.css'}
+                {file: 'stylesheets.css'}
             );
             browserOptions.insertCSS(
                 {code: 'body #footer {display: none;}'}
