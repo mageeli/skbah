@@ -30,6 +30,15 @@ function inAppBrowserAPI() {
         navigator.notification.alert('An internet connection is required to continue');
     } else {
         var browserOptions = window.open('https://skbah.com/','_blank', options);
-        browserOptions.show();
+        browserOptions.addEventListener('loadstop', function () {
+            browserOptions.show();
+            browserOptions.insertCSS(
+                {file: 'stylesheets.css'}
+            );
+            browserOptions.insertCSS(
+                { code: 'body #footer {display: none;}'}
+            );
+        })
+
     }
 }
