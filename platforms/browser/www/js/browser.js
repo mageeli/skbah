@@ -1,13 +1,15 @@
 
-
+document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-    document.addEventListener("backbutton", onBackKeyDown, false);
-    function onBackKeyDown(e) {
-        if (confirm("Are you sure you want to exit app?"))
-        {
+    document.addEventListener("backbutton", function(e){
+        if($.mobile.activePage.is('index.html')){
             e.preventDefault();
+            navigator.app.exitApp();
         }
-    }
+        else {
+            navigator.app.backHistory()
+        }
+    }, false);
 }
 document.addEventListener("deviceready", inAppBrowserAPI, false);
 
