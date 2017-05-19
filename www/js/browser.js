@@ -1,7 +1,13 @@
 
-document.addEventListener("backbutton", onBackKeyDown, false);
-function onBackKeyDown(e) {
-    e.preventDefault();
+
+function onDeviceReady() {
+    document.addEventListener("backbutton", onBackKeyDown, false);
+    function onBackKeyDown(e) {
+        if (confirm("Are you sure you want to exit app?"))
+        {
+            e.preventDefault();
+        }
+    }
 }
 document.addEventListener("deviceready", inAppBrowserAPI, false);
 
