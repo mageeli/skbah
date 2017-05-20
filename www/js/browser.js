@@ -10,7 +10,15 @@ function onDeviceReady() {
             }
         }
     }
+    document.addEventListener("deviceready", nConnection, false);
+    function nConnection() {
+        alert('hi');
+        if (navigator.connection.type == Connection.NONE) {
+            navigator.notification.alert('An internet connection is required to continue');
+        }
+    }
 }
+
 
 document.addEventListener("deviceready", inAppBrowserAPI, false);
 
