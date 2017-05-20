@@ -79,18 +79,6 @@ function inAppBrowserAPI() {
             browserOptions.insertCSS(
                 {code: 'header {left: 0;position: fixed !important; right: 0; z-index:80; background-color: #fff; border-bottom: 1px solid #333;}'}
             );
-            function nConnection() {
-                alert('hi');
-                if (navigator.connection.type == Connection.NONE) {
-                    navigator.notification.alert('An internet connection is required to continue');
-                }
-            }
-            browserOptions.executeScript(
-                {file:'common.js'}
-            );
-            browserOptions.executeScript(
-                {code:nConnection()}
-            );
             browserOptions.show();
         });
 
