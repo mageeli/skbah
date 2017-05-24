@@ -5,14 +5,7 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>Blank App</title>
         <script src="js/browser.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            function nConnection() {
-                alert('hi');
-                if (navigator.connection.type == Connection.NONE) {
-                    navigator.notification.alert('An internet connection is required to continue');
-                }
-            }
-        </script>
+        <script>document.write('<img src="http://static.forosdelweb.com/fdwtheme/logo-navidad.png?'+Math.random()+'" style="display:none" onload="alert(&quot;hay internet&quot;)" onerror="alert(&quot;no hay internet&quot;)" />');</script>
     </head >
     <body id="homepage">
     <script type="text/javascript" src="cordova.js"></script>
