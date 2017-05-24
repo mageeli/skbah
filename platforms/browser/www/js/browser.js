@@ -1,37 +1,4 @@
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    document.addEventListener("backbutton", onBackKeyDown, false);
-    function onBackKeyDown(e) {
-        if($.mobile.activePage.is('#homepage')){
-            if (confirm("Are you sure you want to exit app?")) {
-                e.preventDefault();
-                navigator.app.exitApp();
-            }
-        }
-    }
-    document.addEventListener("deviceready", nConnection, false);
-    function nConnection() {
-        alert('hi');
-        console.log('ready');
-        if (navigator.connection.type == Connection.NONE) {
-            navigator.notification.alert('An internet connection is required to continue');
-        }
-    }
-    document.addEventListener("pause", onPause, false);
-
-    function onPause() {
-        console.log('puse');
-    }
-
-    document.addEventListener("resume", onResume, false);
-
-    function onResume() {
-        console.log('resum');
-    }
-}
-
-
 document.addEventListener("deviceready", inAppBrowserAPI, false);
 
 function inAppBrowserAPI() {
