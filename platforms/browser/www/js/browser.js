@@ -80,30 +80,20 @@ function inAppBrowserAPI() {
                 browserOptions.show();
             }
         };
-        function loadErrorCallBack(params) {
+        function loadErrorCallBack() {
 
             $('#status-message').text("");
 
-            var scriptErrorMesssage =
-                "alert('Sorry we cannot open that page. Message from the server is : "
-                + params.message + "');"
-
-            browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
+             navigator.notification.alert(
+                'You are the winner!',  // message
+                alertDismissed,         // callback
+                'Game Over',            // title
+                'Done'                  // buttonName
+            );
 
             browserOptions.close();
 
             browserOptions = undefined;
-
-        }
-
-        function executeScriptCallBack(params) {
-
-            if (params[0] == null) {
-
-                $('#status-message').text(
-                    "Sorry we couldn't open that page. Message from the server is : '"
-                    + params.message + "'");
-            }
 
         }
     }
