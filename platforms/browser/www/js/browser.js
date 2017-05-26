@@ -95,7 +95,12 @@ function inAppBrowserAPI() {
         }
 
         function executeScriptCallBack() {
-                $('#status-message').text("Sorry we couldn't open that page. Message from the server is ");
+                $('#status-message').text("");
+                if (navigator.connection.type == Connection.NONE) {
+                    navigator.notification.alert('An internet connection is required to continue');
+                } else {
+                    navigator.app.backHistory();
+                }
         }
     }
 }
