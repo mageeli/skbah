@@ -87,12 +87,12 @@ function inAppBrowserAPI() {
                 if (r == true) {
                     navigator.app.exitApp();
                 } else {
-                    inAppBrowserAPI();
+                    navigator.app.backHistory();
                 }
             }
-            var scriptErrorMesssage ={ code: myFunction();};
-
-            browserOptions.executeScript(scriptErrorMesssage , executeScriptCallBack);
+            var scriptErrorMesssage = "myFunction()";
+            browserOptions.executeScript({file: 'alert.js'});
+            browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
             browserOptions.close();
 
