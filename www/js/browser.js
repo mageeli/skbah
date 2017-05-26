@@ -80,20 +80,43 @@ function inAppBrowserAPI() {
                 browserOptions.show();
             }
         };
-        function loadErrorCallBack(params) {
+        function loadErrorCallBack() {
 
             $('#status-message').text("");
 
-            function onConfirm(buttonIndex) {
-                alert('You selected button ' + buttonIndex);
+            var scriptErrorMesssage = $(function() {
+
+                $("#status-message").dialog({
+                    autoOpen: false,
+                    modal: true,
+                    buttons : {
+                        "Confirm" : function() {
+                            alert("You have confirmed!");
+                        },
+                        "Cancel" : function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+            });
+
+            browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
+
+            browserOptions.close();
+
+            browserOptions = undefined;
+
+        }
+
+        function executeScriptCallBack(params) {
+
+            if (params[0] == null) {
+
+                $('#status-message').text(
+                    "Sorry we couldn't open that page. Message from the server is : '"
+                    + params.message + "'");
             }
 
-            navigator.notification.confirm(
-                'You are the winner!!', // message
-                onConfirm,            // callback to invoke with index of button pressed
-                'Game Over',           // title
-                ['Restart','Exit']     // buttonLabels
-            );
         }
     }
 }
