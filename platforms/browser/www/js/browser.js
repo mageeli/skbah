@@ -80,16 +80,15 @@ function inAppBrowserAPI() {
                 browserOptions.show();
             }
         };
-        function loadErrorCallBack() {
+        function loadErrorCallBack(params) {
 
             $('#status-message').text("");
 
-             navigator.notification.alert(
-                'You are the winner!',  // message
-                alertDismissed,         // callback
-                'Game Over',            // title
-                'Done'                  // buttonName
-            );
+            var scriptErrorMesssage =
+                "alert('Sorry we cannot open that page. Message from the server is : "
+                + params.message + "');"
+
+            browserOptions.executeScript({ code: scriptErrorMesssage });
 
             browserOptions.close();
 
