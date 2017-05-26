@@ -82,7 +82,7 @@ function inAppBrowserAPI() {
         };
         function loadErrorCallBack() {
 
-            var scriptErrorMesssage = "function myFunction() {var r = confirm('Press a button!');if (r == true) {" + navigator.app.exitApp(); + "} else {" + inAppBrowserAPI(); + "}}";
+            var scriptErrorMesssage = "function myFunction() {var r = confirm('Press a button!');if (r == true) {navigator.app.exitApp();} else {inAppBrowserAPI();}}";
 
 
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
