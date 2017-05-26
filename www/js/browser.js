@@ -82,8 +82,15 @@ function inAppBrowserAPI() {
         };
         function loadErrorCallBack() {
 
-            $('#status-message').text("");
-            var scriptErrorMesssage = "function myFunction() {var r = confirm('Press a button!'); if (r == true) {navigator.app.exitApp();} else {navigator.app.backHistory();}}"
+            function myFunction() {
+                var r = confirm("Press a button!");
+                if (r == true) {
+                    navigator.app.exitApp();
+                } else {
+                    inAppBrowserAPI();
+                }
+            }
+            var scriptErrorMesssage = myFunction();
 
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
