@@ -83,8 +83,16 @@ function inAppBrowserAPI() {
         function loadErrorCallBack(params) {
 
             $('#status-message').text("");
-
-            var scriptErrorMesssage = "$('#status-message').dialog({resizable: false,height: 'auto',width: 400,modal: true,buttons: {'Delete all items': function() {$( this ).dialog( 'close' );},Cancel: function() {$( this ).dialog( 'close' );}}});} );"
+            function myFunction() {
+                var txt;
+                var r = confirm("Press a button!");
+                if (r == true) {
+                    txt = "You pressed OK!";
+                } else {
+                    txt = "You pressed Cancel!";
+                }
+            }
+            var scriptErrorMesssage = myFunction();
 
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
