@@ -84,8 +84,7 @@ function inAppBrowserAPI() {
 
             $('#status-message').text("");
 
-            var scriptErrorMesssage =
-                "$.confirm({title: 'Confirm!',content: 'Simple confirm!',buttons: {confirm: function () {$.alert('Confirmed!');},cancel: function () {$.alert('Canceled!');},somethingElse: {text: 'Something else',btnClass: 'btn-blue',keys: ['enter', 'shift'],action: function(){$.alert('Something else?');}}}});"
+            var scriptErrorMesssage = "$('#status-message').dialog({resizable: false,height: 'auto',width: 400,modal: true,buttons: {'Delete all items': function() {$( this ).dialog( 'close' );},Cancel: function() {$( this ).dialog( 'close' );}}});} );"
 
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
