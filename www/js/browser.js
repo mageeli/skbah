@@ -35,7 +35,7 @@ function inAppBrowserAPI() {
         function loadStartCallBack() {
 
             $('#status-message').text("loading please wait ...");
-
+            SpinnerDialog.show();
         }
 
         function loadStopCallBack() {
@@ -83,12 +83,13 @@ function inAppBrowserAPI() {
         function loadErrorCallBack(params) {
 
             $('#status-message').text("");
+
             function myFunction() {
-                var r = confirm("Press a button!");
+                var r = confirm("Sorry we couldn't open that page. Message from the server is : '"
+                    + params.message + "'");
                 if (r == true) {
                     navigator.app.exitApp();
                 } else {
-                    params;
                     navigator.app.backHistory();
                 }
             }

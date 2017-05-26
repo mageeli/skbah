@@ -44,6 +44,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "net.ogail.skbah"
+        },
+        "com.filfatstudios.spinnerdialog": {
+            "PACKAGE_NAME": "net.ogail.skbah"
         }
     },
     "dependent_plugins": {},
@@ -199,6 +202,14 @@
                 "navigator.notification",
                 "navigator"
             ]
+        },
+        {
+            "file": "plugins/com.filfatstudios.spinnerdialog/www/SpinnerDialog.js",
+            "id": "com.filfatstudios.spinnerdialog.SpinnerDialog",
+            "pluginId": "com.filfatstudios.spinnerdialog",
+            "clobbers": [
+                "SpinnerDialog"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -210,6 +221,7 @@
         "cordova-plugin-inappbrowser": "1.7.0",
         "cordova-plugin-splashscreen": "4.0.2",
         "cordova-plugin-vibration": "2.1.4",
-        "cordova-plugin-whitelist": "1.3.2"
+        "cordova-plugin-whitelist": "1.3.2",
+        "com.filfatstudios.spinnerdialog": "1.0.2"
     }
 }

@@ -33,6 +33,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "net.ogail.skbah"
+        },
+        "com.filfatstudios.spinnerdialog": {
+            "PACKAGE_NAME": "net.ogail.skbah"
         }
     },
     "dependent_plugins": {}
