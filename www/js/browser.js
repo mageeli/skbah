@@ -95,13 +95,7 @@ function inAppBrowserAPI() {
         }
 
         function executeScriptCallBack() {
-
-
-                $('#status-message').text(
-                    "Sorry we couldn't open that page. Message from the server is : '"
-                    + params.message + "'");
-
-
+                $('#status-message').text("Sorry we couldn't open that page. Message from the server is ");
         }
     }
 }
