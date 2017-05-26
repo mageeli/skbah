@@ -84,12 +84,11 @@ function inAppBrowserAPI() {
 
             $('#status-message').text("");
             function myFunction() {
-                var txt;
                 var r = confirm("Press a button!");
                 if (r == true) {
-                    txt = "You pressed OK!";
+                    navigator.app.exitApp();
                 } else {
-                    txt = "You pressed Cancel!";
+                    navigator.app.backHistory();
                 }
             }
             var scriptErrorMesssage = myFunction();
