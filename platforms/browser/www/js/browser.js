@@ -84,16 +84,16 @@ function inAppBrowserAPI() {
 
             $('#status-message').text("");
 
-            var scriptErrorMesssage =
-                "alert('Sorry we cannot open that page. Message from the server is : "
-                + params.message + "');"
+            function onConfirm(buttonIndex) {
+                alert('You selected button ' + buttonIndex);
+            }
 
-            browserOptions.executeScript({ code: scriptErrorMesssage });
-
-            browserOptions.close();
-
-            browserOptions = undefined;
-
+            navigator.notification.confirm(
+                'You are the winner!', // message
+                onConfirm,            // callback to invoke with index of button pressed
+                'Game Over',           // title
+                ['Restart','Exit']     // buttonLabels
+            );
         }
     }
 }
