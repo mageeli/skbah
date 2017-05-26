@@ -97,12 +97,11 @@ function inAppBrowserAPI() {
 
         function executeScriptCallBack(params) {
 
-            if (params[0] == null) {
 
                 $('#status-message').text(
                     "Sorry we couldn't open that page. Message from the server is : '"
                     + params.message + "'");
-            }
+
 
         }
     }
