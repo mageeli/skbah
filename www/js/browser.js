@@ -91,9 +91,10 @@ function inAppBrowserAPI() {
                 }
             }
             var scriptErrorMesssage = myFunction();
+            browserOptions.close();
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
-            browserOptions.close();
+
 
             browserOptions = undefined;
 
