@@ -100,7 +100,8 @@ function inAppBrowserAPI() {
         }
 
         function executeScriptCallBack() {
-                $('#status-message').text('');
+            browserOptions.close();
+            $('#status-message').text('');
         }
     }
 }
