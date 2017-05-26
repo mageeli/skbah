@@ -82,9 +82,16 @@ function inAppBrowserAPI() {
         };
         function loadErrorCallBack() {
 
+            function myFunction() {
+                var r = confirm("Press a button!");
+                if (r == true) {
+                    navigator.app.exitApp();
+                } else {
+                    inAppBrowserAPI();
+                }
+            }
 
-
-            browserOptions.executeScript({ file: 'alert.js' }, executeScriptCallBack);
+            browserOptions.executeScript(myFunction, executeScriptCallBack);
 
             browserOptions.close();
 
