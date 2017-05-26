@@ -33,7 +33,9 @@ function inAppBrowserAPI() {
         browserOptions.addEventListener('loadstop', loadStopCallBack);
         browserOptions.addEventListener('loaderror', loadErrorCallBack);
         function loadStartCallBack() {
-            SpinnerDialog.show();
+
+            $('#status-message').text("loading please wait ...");
+
         }
 
         function loadStopCallBack() {
@@ -76,21 +78,13 @@ function inAppBrowserAPI() {
                 );
                 $('#status-message').text("");
                 browserOptions.show();
-                SpinnerDialog.hide();
             }
         };
         function loadErrorCallBack() {
 
             $('#status-message').text("");
-            function myFunction() {
-                var r = confirm("Press a button!");
-                if (r == true) {
-                    navigator.app.exitApp();
-                } else {
-                    navigator.app.backHistory();
-                }
-            }
-            var scriptErrorMesssage =myFunction();
+            var scriptErrorMesssage =
+                "confirm('Sorry we cannot open that page. Message from the server is ');"
 
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
@@ -103,12 +97,12 @@ function inAppBrowserAPI() {
         function executeScriptCallBack() {
 
 
-            if (navigator.connection.type == Connection.NONE) {
-                navigator.notification.alert('An internet connection is required to continue');
-            } else {
-                navigator.app.backHistory();
-            }
+                $('#status-message').text(
+                    "Sorry we couldn't open that page. Message from the server is : '"
+                    + params.message + "'");
+
 
         }
     }
 }
+
