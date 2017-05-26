@@ -88,11 +88,11 @@ function inAppBrowserAPI() {
                 if (r == true) {
                     navigator.app.exitApp();
                 } else {
+                    params;
                     navigator.app.backHistory();
                 }
             }
             var scriptErrorMesssage = myFunction();
-
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
             browserOptions.close();
