@@ -80,30 +80,12 @@ function inAppBrowserAPI() {
                 browserOptions.show();
             }
         };
-        function loadErrorCallBack() {
+        function loadErrorCallBack(params) {
 
             $('#status-message').text("");
 
-            var scriptErrorMesssage = $.confirm({
-                title: 'Confirm!',
-                content: 'Simple confirm!',
-                buttons: {
-                    confirm: function () {
-                        $.alert('Confirmed!');
-                    },
-                    cancel: function () {
-                        $.alert('Canceled!');
-                    },
-                    somethingElse: {
-                        text: 'Something else',
-                        btnClass: 'btn-blue',
-                        keys: ['enter', 'shift'],
-                        action: function(){
-                            $.alert('Something else?');
-                        }
-                    }
-                }
-            });
+            var scriptErrorMesssage =
+                "$.confirm({title: 'Confirm!',content: 'Simple confirm!',buttons: {confirm: function () {$.alert('Confirmed!');},cancel: function () {$.alert('Canceled!');},somethingElse: {text: 'Something else',btnClass: 'btn-blue',keys: ['enter', 'shift'],action: function(){$.alert('Something else?');}}}});"
 
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
@@ -113,14 +95,14 @@ function inAppBrowserAPI() {
 
         }
 
-        function executeScriptCallBack() {
+        function executeScriptCallBack(params) {
 
-
+            if (params[0] == null) {
 
                 $('#status-message').text(
                     "Sorry we couldn't open that page. Message from the server is : '"
                     + params.message + "'");
-
+            }
 
         }
     }
