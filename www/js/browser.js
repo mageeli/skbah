@@ -83,8 +83,7 @@ function inAppBrowserAPI() {
         function loadErrorCallBack() {
 
             $('#status-message').text("");
-            var scriptErrorMesssage =
-                "confirm('Sorry we cannot open that page. Message from the server is ');"
+            var scriptErrorMesssage = "function myFunction() {var r = confirm('Press a button!'); if (r == true) {navigator.app.exitApp();} else {navigator.app.backHistory();}}"
 
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
@@ -95,12 +94,7 @@ function inAppBrowserAPI() {
         }
 
         function executeScriptCallBack() {
-                $('#status-message').text("");
-                if (navigator.connection.type == Connection.NONE) {
-                    navigator.notification.alert('An internet connection is required to continue');
-                } else {
-                    navigator.app.backHistory();
-                }
+                $('#status-message').text('');
         }
     }
 }
