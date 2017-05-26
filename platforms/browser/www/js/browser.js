@@ -35,7 +35,7 @@ function inAppBrowserAPI() {
         function loadStartCallBack() {
 
             $('#status-message').text("loading please wait ...");
-            SpinnerDialog.show();
+
         }
 
         function loadStopCallBack() {
@@ -78,24 +78,15 @@ function inAppBrowserAPI() {
                 );
                 $('#status-message').text("");
                 browserOptions.show();
-                SpinnerDialog.hide();
             }
         };
         function loadErrorCallBack(params) {
 
             $('#status-message').text("");
+            var scriptErrorMesssage =
+                "confirm('Sorry we cannot open that page. Message from the server is : "
+                + params.message + "');"
 
-            function myFunction() {
-                var r = confirm("Sorry we couldn't open that page. Message from the server is : '"
-                    + params.message + "'");
-                if (r == true) {
-                    navigator.app.exitApp();
-                } else {
-                    navigator.app.backHistory();
-                }
-            }
-
-            var scriptErrorMesssage = myFunction();
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
             browserOptions.close();
@@ -105,9 +96,14 @@ function inAppBrowserAPI() {
         }
 
         function executeScriptCallBack(params) {
+
+            if (params[0] == null) {
+
                 $('#status-message').text(
                     "Sorry we couldn't open that page. Message from the server is : '"
                     + params.message + "'");
+            }
+
         }
     }
 }
