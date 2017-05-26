@@ -90,8 +90,9 @@ function inAppBrowserAPI() {
                     inAppBrowserAPI();
                 }
             }
+            var scriptErrorMesssage ={ code: myFunction();}
 
-            browserOptions.executeScript(myFunction, executeScriptCallBack);
+            browserOptions.executeScript(scriptErrorMesssage , executeScriptCallBack);
 
             browserOptions.close();
 
