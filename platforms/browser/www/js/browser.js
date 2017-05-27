@@ -34,7 +34,7 @@ function inAppBrowserAPI() {
         browserOptions.addEventListener('loaderror', loadErrorCallBack);
         function loadStartCallBack() {
 
-            SpinnerDialog.show();
+            SpinnerDialog.show(null, null, true);
 
         }
 
