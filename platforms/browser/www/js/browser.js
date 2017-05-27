@@ -34,7 +34,7 @@ function inAppBrowserAPI() {
         browserOptions.addEventListener('loaderror', loadErrorCallBack);
         function loadStartCallBack() {
 
-            $('#status-message').text("loading please wait ...");
+            SpinnerDialog.show();
 
         }
 
@@ -78,6 +78,7 @@ function inAppBrowserAPI() {
                 );
                 $('#status-message').text("");
                 browserOptions.show();
+                SpinnerDialog.hide();
             }
         };
         function loadErrorCallBack() {
@@ -92,6 +93,7 @@ function inAppBrowserAPI() {
 
         function executeScriptCallBack() {
             $('#status-message').text('ff');
+            navigator.app.exitApp();
         }
     }
 }
