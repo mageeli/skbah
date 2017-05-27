@@ -87,8 +87,7 @@ function inAppBrowserAPI() {
                 if (r == true) {
                     navigator.app.exitApp();
                 } else {
-                    browserOptions.addEventListener('loadstart', loadStartCallBack);
-                    browserOptions.addEventListener('loadstop', loadStopCallBack);
+                    window.open('https://skbah.com/','_blank', options);
                 }
             }
             var scriptErrorMesssage = myFunction();
