@@ -26,7 +26,7 @@ function inAppBrowserAPI() {
     var options = optionArr.join();
 
     if (navigator.connection.type == Connection.NONE) {
-        navigator.notification.alert('An internet connection is required to continue');
+        navigator.notification.alert('لا يوجد اتصال بالانترنت يرجى التحقق من ذالك');
     } else {
         var browserOptions = window.open('https://skbah.com/','_blank', options);
         browserOptions.addEventListener('loadstart', loadStartCallBack);
@@ -83,7 +83,7 @@ function inAppBrowserAPI() {
         };
         function loadErrorCallBack() {
 
-            var scriptErrorMesssage = "alert('Sorry we cannot open that page. Message from the server is');";
+            var scriptErrorMesssage = "alert('لا يوجد اتصال بالانترنت يرجى التحقق من ذالك ');";
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
             browserOptions.close();
@@ -92,7 +92,7 @@ function inAppBrowserAPI() {
         }
 
         function executeScriptCallBack() {
-            $('#status-message').text('ff');
+            $('#status-message').text('لا يوجد اتصال بالانترنت يرجى التحقق من ذالك');
             navigator.app.exitApp();
         }
     }
