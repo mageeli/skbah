@@ -4,8 +4,8 @@
     <description>
         A blank PhoneGap app.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="admin@skbah.com" href="https://skbah.com">
+        skbah team
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />

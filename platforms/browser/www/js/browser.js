@@ -33,9 +33,6 @@ function inAppBrowserAPI() {
         browserOptions.addEventListener('loadstop', loadStopCallBack);
         browserOptions.addEventListener('loaderror', loadErrorCallBack);
         function loadStartCallBack() {
-
-            SpinnerDialog.show(null, null, true);
-
         }
 
         function loadStopCallBack() {
@@ -78,7 +75,6 @@ function inAppBrowserAPI() {
                 );
                 $('#status-message').text("");
                 browserOptions.show();
-                SpinnerDialog.hide();
             }
         };
         function loadErrorCallBack() {
