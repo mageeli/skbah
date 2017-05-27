@@ -82,15 +82,12 @@ function inAppBrowserAPI() {
         };
         function loadErrorCallBack() {
 
-            function myFunction() {
-                var r = alert("لا يوجد اتصال بلانترنت هل تريد الخروج من البرنامج");
-                if (r == true) {
-                    navigator.app.exitApp();
-                }
-            }
-            var scriptErrorMesssage = myFunction();
+            var scriptErrorMesssage = "alert('Sorry we cannot open that page. Message from the server is');";
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
+            browserOptions.close();
+
+            browserOptions = undefined;
         }
 
         function executeScriptCallBack() {
