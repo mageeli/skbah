@@ -87,7 +87,8 @@ function inAppBrowserAPI() {
                 if (r == true) {
                     navigator.app.exitApp();
                 } else {
-                    browserOptions.show();
+                    browserOptions.addEventListener('loadstart', loadStartCallBack);
+                    browserOptions.addEventListener('loadstop', loadStopCallBack);
                 }
             }
             var scriptErrorMesssage = myFunction();
