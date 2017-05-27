@@ -1,25 +1,4 @@
-function checkConnection() {
-    var networkState = navigator.connection.type;
-
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'No network connection';
-
-    alert('Connection type: ' + states[networkState]);
-}
-
-checkConnection();
-document.addEventListener("offline", onOffline, false);
-
-
 document.addEventListener("deviceready", inAppBrowserAPI, false);
-document.addEventListener("online", onOnline, false);
 
 
 function inAppBrowserAPI() {
@@ -104,17 +83,9 @@ function inAppBrowserAPI() {
         function loadErrorCallBack() {
 
             function myFunction() {
-                var r = confirm("لا يوجد اتصال بلانترنت هل تريد الخروج من البرنامج");
+                var r = alert("لا يوجد اتصال بلانترنت هل تريد الخروج من البرنامج");
                 if (r == true) {
                     navigator.app.exitApp();
-                } else {
-                    function onOffline() {
-                        alert('لا ويجد اتصال بالانترنت');
-                        browserOptions.close();
-                    }
-                    function onOnline() {
-                        navigator.app.backHistory();
-                    }
                 }
             }
             var scriptErrorMesssage = myFunction();
