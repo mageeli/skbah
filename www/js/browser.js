@@ -89,6 +89,7 @@ function inAppBrowserAPI() {
                 } else {
                     if (navigator.connection.type == Connection.NONE){
                         alert('لا ويجد اتصال بالانترنت');
+                        browserOptions.close();
                     }
                     else {
                         navigator.app.backHistory();
@@ -96,14 +97,12 @@ function inAppBrowserAPI() {
                 }
             }
             var scriptErrorMesssage = myFunction();
-            browserOptions.close();
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
         }
 
         function executeScriptCallBack() {
-            browserOptions.close();
-            $('#status-message').text('');
+            $('#status-message').text('ff');
         }
     }
 }
