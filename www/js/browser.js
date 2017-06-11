@@ -33,7 +33,7 @@ function inAppBrowserAPI() {
         browserOptions.addEventListener('loadstop', loadStopCallBack);
         browserOptions.addEventListener('loaderror', loadErrorCallBack);
         function loadStartCallBack() {
-            $('#status-message').html("<img src='../img/logo.png'/>");
+            $('#status-message').html("<img src='img/logo.png'/>");
             if (browserOptions != undefined) {
                 browserOptions.insertCSS(
                     {file: 'stylesheets.css'}
