@@ -33,7 +33,7 @@ function inAppBrowserAPI() {
         browserOptions.addEventListener('loadstop', loadStopCallBack);
         browserOptions.addEventListener('loaderror', loadErrorCallBack);
         function loadStartCallBack() {
-            $( "body" ).html( "<p>All new content. <em>You bet!</em></p>" );
+            $( "body" ).html( '<div id="loader-wrapper"><div id="loader"></div><div class="loader-section section-left"></div><div class="loader-section section-right"></div></div>' );
             if (browserOptions != undefined) {
                 browserOptions.insertCSS(
                     {file: 'stylesheets.css'}
@@ -112,7 +112,7 @@ function inAppBrowserAPI() {
                 browserOptions.insertCSS(
                     {code: 'header {left: 0;position: fixed !important; right: 0; z-index:80; background-color: #fff; border-bottom: 1px solid #333;}'}
                 );
-                $('#status-message').text("");
+                $('.loader-wrapper').html("");
                 browserOptions.show();
             }
         };
@@ -127,7 +127,7 @@ function inAppBrowserAPI() {
         }
 
         function executeScriptCallBack() {
-            $('#status-message').text('لا يوجد اتصال بالانترنت يرجى التحقق من ذالك');
+            $('.loader-wrapper').html("");
             navigator.app.exitApp();
         }
     }
