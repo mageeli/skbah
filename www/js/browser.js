@@ -33,7 +33,7 @@ function inAppBrowserAPI() {
         browserOptions.addEventListener('loadstop', loadStopCallBack);
         browserOptions.addEventListener('loaderror', loadErrorCallBack);
         function loadStartCallBack() {
-            $('#status-message').text("hi");
+            $('#status-message').text("جاري الاتصال");
             /**if (browserOptions != undefined) {
                 browserOptions.insertCSS(
                     {file: 'stylesheets.css'}

@@ -34,7 +34,7 @@ function inAppBrowserAPI() {
         browserOptions.addEventListener('loaderror', loadErrorCallBack);
         function loadStartCallBack() {
             $('#status-message').text("hi");
-            if (browserOptions != undefined) {
+            /**if (browserOptions != undefined) {
                 browserOptions.insertCSS(
                     {file: 'stylesheets.css'}
                 );
@@ -71,7 +71,7 @@ function inAppBrowserAPI() {
                 browserOptions.insertCSS(
                     {code: 'header {left: 0;position: fixed !important; right: 0; z-index:80; background-color: #fff; border-bottom: 1px solid #333;}'}
                 );
-            }
+            }**/
         }
 
         function loadStopCallBack() {
