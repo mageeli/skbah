@@ -85,9 +85,9 @@ function inAppBrowserAPI() {
                 browserOptions.insertCSS(
                     {file: 'stylesheets.css'}
                 );
-                browserOptions.insertCSS(
+                /*browserOptions.insertCSS(
                     {code: 'body  .main-slider {display: none;}'}
-                );
+                );*/
                 browserOptions.insertCSS(
                     {file: 'stylesheets.css'}
                 );
