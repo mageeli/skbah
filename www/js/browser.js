@@ -10,7 +10,7 @@ function inAppBrowserAPI() {
         'transitionstyle=fliphrizontal',
         'toolbar=no',
         'closebuttoncaption=Exit',
-        'toolbarposition=top',
+        'toolbarposition=no',
         'disallowoverscroll=yes',
         'enableViewportScale=yes',
         'mediaPlaybackRequireUserAction=yes',
@@ -28,90 +28,16 @@ function inAppBrowserAPI() {
     if (navigator.connection.type == Connection.NONE) {
         navigator.notification.alert('لا يوجد اتصال بالانترنت يرجى التحقق من ذالك');
     } else {
-        var browserOptions = window.open('https://skbah.com/','_blank', options);
+        var browserOptions = window.open('https://mobile.skbah.com/','_blank', options);
         browserOptions.addEventListener('loadstart', loadStartCallBack);
         browserOptions.addEventListener('loadstop', loadStopCallBack);
         browserOptions.addEventListener('loaderror', loadErrorCallBack);
         function loadStartCallBack() {
             $( "body" ).html( '<div id="loader-wrapper"><div id="loader"></div><div class="loader-section section-left"></div><div class="loader-section section-right"></div></div>' );
-            if (browserOptions != undefined) {
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: 'body #footer {display: none;}'}
-                );
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: 'body  .main-slider {display: none;}'}
-                );
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: '.common-home header {left: 0;position: fixed !important; right: 0; top: 0px; z-index:80; background-color: #fff; border-bottom: 1px solid #333;}'}
-                );
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: '.homepage-text {margin-top: 100px;}'}
-                );
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: '.content-top-breadcum {height: 200px !important;}'}
-                );
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: 'header {left: 0;position: fixed !important; right: 0; z-index:80; background-color: #fff; border-bottom: 1px solid #333;}'}
-                );
-            }
         }
 
         function loadStopCallBack() {
             if (browserOptions != undefined) {
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: 'body #footer {display: none;}'}
-                );
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: 'body  .main-slider {display: none;}'}
-                );
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: '.common-home header {left: 0;position: fixed !important; right: 0; top: 0px; z-index:80; background-color: #fff; border-bottom: 1px solid #333;}'}
-                );
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: '.homepage-text {margin-top: 100px;}'}
-                );
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: '.content-top-breadcum {height: 200px !important;}'}
-                );
-                browserOptions.insertCSS(
-                    {file: 'stylesheets.css'}
-                );
-                browserOptions.insertCSS(
-                    {code: 'header {left: 0;position: fixed !important; right: 0; z-index:80; background-color: #fff; border-bottom: 1px solid #333;}'}
-                );
                 $('.loader-wrapper').html("");
                 browserOptions.show();
             }
