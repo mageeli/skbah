@@ -7,6 +7,10 @@
     <author email="admin@skbah.com" href="https://skbah.com">
         skbah team
     </author>
+    <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
+    <preference name="auto-hide-splash-screen"    value="true" />
+    <plugin name="cordova-plugin-dialogs" />
+    <plugin name="cordova-plugin-splashscreen" />
     <content src="index.html" />
     <icon src="icon.png" />
     <platform name="android">
