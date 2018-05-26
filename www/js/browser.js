@@ -33,7 +33,7 @@ function inAppBrowserAPI() {
         browserOptions.addEventListener('loadstop', loadStopCallBack);
         browserOptions.addEventListener('loaderror', loadErrorCallBack);
         function loadStartCallBack() {
-
+            browserOptions.show();
         }
 
         function loadStopCallBack() {
