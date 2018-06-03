@@ -23,7 +23,11 @@ function inAppBrowserAPI() {
         'fullscreen=yes'
     ]
 
-        var options = optionArr.join();
+    var options = optionArr.join();
+
+    if (navigator.connection.type == Connection.NONE) {
+        navigator.notification.alert('لا يوجد اتصال بالانترنت يرجى التحقق من ذالك');
+    } else {
         var browserOptions = window.open('https://mobile.skbah.com/','_blank', options);
         browserOptions.addEventListener('loadstart', loadStartCallBack);
         browserOptions.addEventListener('loadstop', loadStopCallBack);
@@ -40,6 +44,7 @@ function inAppBrowserAPI() {
         };
         function loadErrorCallBack() {
 
+            var scriptErrorMesssage = "alert('لا يوجد اتصال بالانترنت يرجى التحقق من ذالك ');";
             browserOptions.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
 
             browserOptions.close();
@@ -51,4 +56,5 @@ function inAppBrowserAPI() {
             $('.loader-wrapper').html("");
             navigator.app.exitApp();
         }
+    }
 }
